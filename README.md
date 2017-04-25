@@ -5,29 +5,18 @@ SwipeView is a class designed to simplify the implementation of horizontal, page
 
 SwipeView's interface and implementation is based on the iCarousel library, and should be familiar to anyone who has used iCarousel.
 
-
-Supported OS & SDK Versions
------------------------------
-
-* Supported build target - iOS 7.0 (Xcode 5.0, Apple LLVM compiler 5.0)
-* Earliest supported deployment target - iOS 5.0
-* Earliest compatible deployment target - iOS 4.3
-
-NOTE: 'Supported' means that the library has been tested with this version. 'Compatible' means that the library should work on this OS version (i.e. it doesn't rely on any unavailable SDK features) but is no longer being tested for compatibility and may require tweaking or bug fixes to run correctly.
-
-
-ARC Compatibility
-------------------
-
-As of version 1.3, SwipeView requires ARC. If you wish to use SwipeView in a non-ARC project, just add the -fobjc-arc compiler flag to the SwipeView.m class. To do this, go to the Build Phases tab in your target settings, open the Compile Sources group, double-click SwipeView.m in the list and type -fobjc-arc into the popover.
-
-If you wish to convert your whole project to ARC, comment out the #error line in SwipeView.m, then run the Edit > Refactor > Convert to Objective-C ARC... tool in Xcode and make sure all files that you wish to use ARC for (including SwipeView.m) are checked.
-
-
-Thread Safety
+Installation
 --------------
+### Carthage
 
-SwipeView is derived from UIView and - as with all UIKit components - it should only be accessed from the main thread. You may wish to use threads for loading or updating SwipeView contents or items, but always ensure that once your content has loaded, you switch back to the main thread before updating the SwipeView.
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+If you are using Carthage, add following line into your Cartfile
+
+	github "stanfeldman/SwipeView"
+
+### Manual
+To use the SwipeView class in an app, just drag the SwipeView class files (demo files and assets are not needed) into your project.
 
 Examples
 --------------
@@ -36,12 +25,6 @@ Examples
 
 ### Paging Example
 ![paging](http://g.recordit.co/RKT9OEHboL.gif)
-
-Installation
---------------
-
-To use the SwipeView class in an app, just drag the SwipeView class files (demo files and assets are not needed) into your project.
-
 
 Properties
 --------------
@@ -254,9 +237,35 @@ You can also nest UIControls within your item views and these will receive touch
 
 If you wish to detect other types of interaction such as swipes, double taps or long presses, the simplest way is to attach a UIGestureRecognizer to your item view or its subviews before passing it to the SwipeView.
 
+Supported OS & SDK Versions
+-----------------------------
+
+* Supported build target - iOS 7.0 (Xcode 5.0, Apple LLVM compiler 5.0)
+* Earliest supported deployment target - iOS 5.0
+* Earliest compatible deployment target - iOS 4.3
+
+NOTE: 'Supported' means that the library has been tested with this version. 'Compatible' means that the library should work on this OS version (i.e. it doesn't rely on any unavailable SDK features) but is no longer being tested for compatibility and may require tweaking or bug fixes to run correctly.
+
+
+ARC Compatibility
+------------------
+
+As of version 1.3, SwipeView requires ARC. If you wish to use SwipeView in a non-ARC project, just add the -fobjc-arc compiler flag to the SwipeView.m class. To do this, go to the Build Phases tab in your target settings, open the Compile Sources group, double-click SwipeView.m in the list and type -fobjc-arc into the popover.
+
+If you wish to convert your whole project to ARC, comment out the #error line in SwipeView.m, then run the Edit > Refactor > Convert to Objective-C ARC... tool in Xcode and make sure all files that you wish to use ARC for (including SwipeView.m) are checked.
+
+
+Thread Safety
+--------------
+
+SwipeView is derived from UIView and - as with all UIKit components - it should only be accessed from the main thread. You may wish to use threads for loading or updating SwipeView contents or items, but always ensure that once your content has loaded, you switch back to the main thread before updating the SwipeView.
+
 
 Release Notes
 ----------------
+Version 1.3.3
+
+- Added Carthage support 
 
 Version 1.3.2
 
